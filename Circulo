@@ -1,7 +1,5 @@
 package deberpol;
 
-
-
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -42,5 +40,5 @@ public void DibujarFigura(Graphics aux) {
 	aux.setColor(Color.BLUE);
 	aux.drawOval(getX1(), getY1(), (int)radio, (int)radio);
 	
-} 
+	} 
 }
