@@ -1,0 +1,72 @@
+
+import java.util.Scanner;
+import javax.swing.JFrame;
+
+
+
+public class App {
+	
+public static void main(String Args[]){
+	Pantalla p1 = new Pantalla();
+	int opcion;
+	Scanner aux = new Scanner(System.in);
+	
+	
+	do{
+		System.out.println("************MENU*******************\n\n\t1.-INGRESAR FIGURAS\n\t2.-DIBUJAR FIGURAS\n\t3.-SALIR\n");
+		opcion = aux.nextInt();
+		if(opcion==1){
+			int option2;
+			System.out.println("\t1.-Circulo\n\t2.-Cuadrado\n\t3.-Rectngulo");
+			option2=aux.nextInt();
+			switch(option2){
+				case 1:
+					int radio,x,y;
+					System.out.println("INGRESE EL RADIO: \n");
+					radio= aux.nextInt();
+					System.out.println("INGRESE LA COORDENADA EN X DEL ORIGEN: \n");
+					x= aux.nextInt();
+					System.out.println("INGRESE LA COORDENADA EN Y DEL ORIGEN: \n");
+					y=aux.nextInt();
+					Circulo c = new Circulo(radio,x,y);
+					p1.add(c);
+					break;
+				case 2:
+					int lado,x1,y1;
+					System.out.println("INGRESE EL LADO: \n");
+					lado= aux.nextInt();
+					System.out.println("INGRESE LA COORDENADA EN X DEL ORIGEN: \n");
+					x1= aux.nextInt();
+					System.out.println("INGRESE LA COORDENADA EN Y DEL ORIGEN: \n");
+					y1=aux.nextInt();
+					Cuadrado b = new Cuadrado(lado,x1,y1);
+					p1.add(b);
+					break;
+				case 3:
+					int altura,largo,x2,y2;
+					System.out.println("INGRESE LA ALTURA: \n");
+					altura= aux.nextInt();
+					System.out.println("INGRESE EL LARGO: \n");
+					largo= aux.nextInt();
+					System.out.println("INGRESE LA COORDENADA EN X DEL ORIGEN: \n");
+					x2= aux.nextInt();
+					System.out.println("INGRESE LA COORDENADA EN Y DEL ORIGEN: \n");
+					y2=aux.nextInt();
+					Rectangulo d = new Rectangulo(altura,largo,x2,y2);
+					p1.add(d);
+					
+					break;
+			}
+		}
+		else if(opcion==2){
+			JFrame menu = new JFrame ("DIBUJAR FIGURAS");
+			menu.setVisible(true);
+			menu.setSize(1500, 800);
+			menu.setLayout(null);
+			menu.printAll(menu.getGraphics());
+			p1.GraficarFiguras(menu.getGraphics());
+		}
+	}while(opcion!=3);
+	
+	}
+}
