@@ -1,0 +1,29 @@
+package deberpol;
+
+import java.awt.Graphics;
+import java.util.ArrayList;
+
+public class Pantalla {
+	private ArrayList <Figura> lista;
+
+	public Pantalla(){
+		lista=new ArrayList<Figura>();
+	}
+
+	public void add(Figura a){
+		lista.add(a);
+	}
+
+	public void print(){
+		for(Figura each: lista){
+			System.out.println(each);
+		}
+	}
+
+	public void GraficarFiguras(Graphics aux){
+		for(Figura aux2: lista){
+			aux2.DibujarFigura(aux);
+		}
+	}
+
+}
