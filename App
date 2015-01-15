@@ -61,7 +61,7 @@ public static void main(String Args[]){
 		else if(opcion==2){
 			JFrame menu = new JFrame ("DIBUJAR FIGURAS");
 			menu.setVisible(true);
-			menu.setSize(1500, 800);
+			menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			menu.setLayout(null);
 			menu.printAll(menu.getGraphics());
 			p1.GraficarFiguras(menu.getGraphics());
