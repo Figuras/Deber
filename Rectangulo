@@ -1,0 +1,42 @@
+package deberpol;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class Rectangulo extends Figura{
+	private double alto;
+	private double largo;
+	
+	public Rectangulo(double alto , double largo , int x , int y) {
+		super(x,y);
+		// TODO Auto-generated constructor stub
+		this.alto=alto;
+		this.largo=largo;
+	}
+
+	@Override
+	public double area() {
+		// TODO Auto-generated method stub
+		return alto*largo;
+	}
+
+	@Override
+	public double perimetro() {
+		// TODO Auto-generated method stub
+		return alto+alto+largo+largo;
+	}
+
+	@Override
+	public void DibujarFigura(Graphics aux) {
+		// TODO Auto-generated method stub
+		aux.setColor(Color.GREEN);
+		aux.drawRect(getX1(), getY1(), (int)largo, (int)alto);
+	}
+	
+	public String toString(){
+		return ("Rectangulo:\nAltura:"+alto+"\n"+"Largo:"+ largo +"\n"+ "Area:"+area()+"\n"+"Perimetro:"+perimetro());
+	}
+	
+	
+	
+}
